@@ -107,27 +107,5 @@ namespace _401_Prework_Test_App
                 return isNotPerfect;
             }
         }
-
-        static string MyMethod()
-        {
-            return "Hello";
-        }
-
-        static void Loops()
-        {
-            string[] myArray = new string[10];
-
-            int[] mySecondArray = { 1, 2, 3, 4 };
-
-            for (int i = 0; i < mySecondArray.Length; i++)
-            {
-                Console.WriteLine(mySecondArray[i]);
-            }
-
-            foreach (int item in mySecondArray)
-            {
-                Console.WriteLine(item);
-            }
-        }
     }
 }

@@ -6,13 +6,21 @@ namespace _401_Prework_Test_App
     {
         static void Main(string[] args)
         {
+            int leapYear = 1996;
+            int notLeapYear = 1900;
             int[] notPerfectArray = {4, 5, 6};
             int[] perfectArray = { 1,3,2 };
+            int[,] sumArray = new int[3, 5] { { 1, 2, 3, 4, 5 }, { 6, 7, 8, 9, 10 }, { 11, 12, 13, 14, 15 } };
 
             Score(); //Code Challenge 1, Problem 1
-            LeapYear(); //Code Challenge 1, Problem 2
-            PerfectSequence(notPerfectArray); //Code Challenge 1, Problem 3
+
+            LeapYear(leapYear); //Code Challenge 1, Problem 2
+            LeapYear(notLeapYear); //Code Challenge 1, Problem 2
+
             PerfectSequence(perfectArray); //Code Challenge 1, Problem 3
+            PerfectSequence(notPerfectArray); //Code Challenge 1, Problem 3
+
+            SumRows(sumArray);//Code Challenge 1, Problem 4
         }
 
 //Code Challenge 1, Problem 1: Array Max Results
@@ -42,13 +50,8 @@ namespace _401_Prework_Test_App
         }
 
  //Code Challenge 1, Problem 2: Leap Year Calculator
-        static void LeapYear()
+        static void LeapYear(int userYear)
         {
-            int userYear = 0;
-
-            Console.WriteLine("Please enter a year:");
-            userYear = int.Parse(Console.ReadLine());
-
             if (userYear % 4 == 0)
             {
                 if (userYear % 100 == 0)
@@ -106,6 +109,23 @@ namespace _401_Prework_Test_App
                 Console.WriteLine("NOT a perfect number!");
                 return isNotPerfect;
             }
+        }
+
+//Code Challenge 1, Problem 4: Sum of Rows       
+        static int[] SumRows(int[,] array)
+        {
+            int[] sumArray = new int[array.GetLength(0)];
+
+            for(int i = 0; i < array.GetLength(0); i++)
+            {
+                int total = 0;
+
+                for(int j = 0; j < array.GetLength(1); i++)
+                {
+                    sumArray[i] = total + array[i, j];
+                }
+            }
+            return sumArray;
         }
     }
 }
